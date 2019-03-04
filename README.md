@@ -5,7 +5,7 @@
 About r-chemospec
 =================
 
-Home: https://github.com/bryanhanson/ChemoSpec
+Home: https://bryanhanson.github.io/ChemoSpec/
 
 Package license: GPL-3
 
