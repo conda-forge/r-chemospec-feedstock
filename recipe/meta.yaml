@@ -1,4 +1,4 @@
-{% set version = '5.1.48' %}
+{% set version = "5.2.12" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ChemoSpec_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ChemoSpec/ChemoSpec_{{ version }}.tar.gz
-  sha256: 070b13746674438f8300da0d46dcea5c3d98e1c2e87d51615dfe1b3fc0af4d49
+  sha256: ee64b142240f28c78b3c7d23260b980ce2916ab07551f014ea0900e6854d20e3
 
 build:
   merge_build_host: True  # [win]
@@ -27,10 +27,12 @@ requirements:
     - r-base
     - r-chemospecutils >=0.3
     - r-plyr
+    - r-readjdx >=0.4
   run:
     - r-base
     - r-chemospecutils >=0.3
     - r-plyr
+    - r-readjdx >=0.4
 
 test:
   commands:
