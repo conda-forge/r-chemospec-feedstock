@@ -1,4 +1,4 @@
-{% set version = "5.3.21" %}
+{% set version = "6.0.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ChemoSpec_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ChemoSpec/ChemoSpec_{{ version }}.tar.gz
-  sha256: 2240333036e195a7166fc7764b3d98c008a828e044f619b90a10b92252b8c892
+  sha256: c5a917321777710c22816e1dd629d5d01aebb2b3d21045f80ac85eb841739bcd
 
 build:
   merge_build_host: true  # [win]
@@ -23,16 +23,27 @@ build:
 requirements:
   build:
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
-    - r-chemospecutils >=0.3
+    - r-chemospecutils >=1.0
+    - r-ggplot2
+    - r-magrittr
+    - r-patchwork
+    - r-plotly
     - r-plyr
-    - r-readjdx >=0.4
+    - r-readjdx >=0.6
+    - r-reshape2
   run:
     - r-base
-    - r-chemospecutils >=0.3
+    - r-chemospecutils >=1.0
+    - r-ggplot2
+    - r-magrittr
+    - r-patchwork
+    - r-plotly
     - r-plyr
-    - r-readjdx >=0.4
+    - r-readjdx >=0.6
+    - r-reshape2
 
 test:
   commands:
@@ -41,7 +52,7 @@ test:
 
 about:
   home: https://bryanhanson.github.io/ChemoSpec/
-  license: GPL-3
+  license: GPL-3.0-only
   summary: A collection of functions for top-down exploratory data analysis of spectral data including nuclear magnetic resonance (NMR), infrared (IR), Raman, X-ray fluorescence (XRF) and other similar types of spectroscopy. Includes functions for plotting and inspecting spectra, peak alignment, hierarchical cluster analysis
     (HCA), principal components analysis (PCA) and model-based clustering. Robust methods appropriate for this type of high-dimensional data are available. ChemoSpec is designed for structured experiments, such as metabolomics investigations, where the samples fall into treatment and control groups. Graphical output is formatted
     consistently for publication quality plots. ChemoSpec is intended to be very user friendly and to help you get usable results quickly. A vignette covering typical operations is available.
