@@ -1,4 +1,4 @@
-{% set version = "6.1.3" %}
+{% set version = "6.1.4" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ChemoSpec_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ChemoSpec/ChemoSpec_{{ version }}.tar.gz
-  sha256: 6318922c2a5982b3dd80e892dab52ee0e6a365c4e76d625e85a844df20605240
+  sha256: c1c186fbb19788ab04aea26984be8774de76233439fcd8bbc3e88e1bbae3d736
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
