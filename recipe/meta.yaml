@@ -1,6 +1,5 @@
 {% set version = "6.1.10" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-chemospec
@@ -13,8 +12,7 @@ source:
   sha256: afda3f571408cc433f4bb5e7ea1e4a043043749105ef41419ec5c95d9785b27b
 
 build:
-  merge_build_host: true  # [win]
-  number: 0
+  number: 1
   noarch: generic
   rpaths:
     - lib/R/lib/
