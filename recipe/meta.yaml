@@ -1,4 +1,4 @@
-{% set version = "6.1.11" %}
+{% set version = "6.2.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ChemoSpec_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ChemoSpec/ChemoSpec_{{ version }}.tar.gz
-  sha256: 94de6a85ecf4d7310cfa1187a09751ad1c7f699109a745d2c71b347bfe55ad14
+  sha256: 3e88a72eed07624a74db59a58cdd739846ca0a1adc2ed689aea88ae04cc27442
 
 build:
   number: 0
